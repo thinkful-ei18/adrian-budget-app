@@ -1,6 +1,10 @@
 import React from 'react';
+import { reduxForm, Field, SubmissionError } from 'redux-form';
+import Input from './input';
+import { required, nonEmpty, maxNumbers } from  '../validators';
 
-export default function Income (props) {
+
+export function AddIncome (props) {
 return (
  <div className="budget-income">
   <h2>Add your monthly income!</h2>
@@ -13,3 +17,8 @@ return (
  </div>
 );
 }
+
+
+export default reduxForm({
+  form: 'income'
+})(AddIncome);
