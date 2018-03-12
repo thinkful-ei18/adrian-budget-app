@@ -34,5 +34,5 @@ export function addBill (props) {
 }
 
 export default reduxForm({
-  form: 'income'
+  form: 'bills'
 })(addBill);
