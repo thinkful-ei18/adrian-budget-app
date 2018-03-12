@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Income from './components/income';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         <p className="App-intro">
           Create an account, add your bills and log every dollar you spend!
         </p>
+        <Income/>
       </div>
     );
   }
