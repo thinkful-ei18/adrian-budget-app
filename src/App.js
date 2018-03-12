@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './dollar.svg';
 import './App.css';
-import Income from './components/add-income';
+import AddIncome from './components/add-income';
+import AddBills from './components/add-bill';
 import BillsList from './components/bills-list';
 import BillsCheckbox from './components/bills-checkbox';
 
@@ -16,7 +17,8 @@ class App extends Component {
         <p className="App-intro">
           Create an account, add your bills and log every dollar you spend!
         </p>
-        <Income/>
+        <AddIncome/>
+        <AddBills />
         <BillsList />
         <BillsCheckbox />
       </div>
