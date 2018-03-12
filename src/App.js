@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './dollar.svg';
 import './App.css';
 import Income from './components/income';
+import BillsList from './components/bills-list';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           Create an account, add your bills and log every dollar you spend!
         </p>
         <Income/>
+        <BillsList />
       </div>
     );
   }
