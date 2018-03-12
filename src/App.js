@@ -3,6 +3,7 @@ import logo from './dollar.svg';
 import './App.css';
 import Income from './components/income';
 import BillsList from './components/bills-list';
+import BillsCheckbox from './components/bills-checkbox';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         </p>
         <Income/>
         <BillsList />
+        <BillsCheckbox />
       </div>
     );
   }
