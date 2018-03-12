@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './dollar.svg';
 import './App.css';
-import Income from './components/income';
+import Income from './components/add-income';
 import BillsList from './components/bills-list';
 import BillsCheckbox from './components/bills-checkbox';
 
