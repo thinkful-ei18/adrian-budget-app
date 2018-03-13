@@ -9,8 +9,8 @@ import { addBill } from '../actions/bills';
 export class newBill extends React.Component {
 
   onSubmit(values) {
-    console.log(values);
-    // this.props.dispatch(addBill(values));
+    // console.log(values);
+    this.props.dispatch(addBill(values));
   }
 
   render () {
