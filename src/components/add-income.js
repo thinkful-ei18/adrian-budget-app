@@ -8,7 +8,6 @@ import { addIncome } from '../actions/income';
 export class AddIncome extends React.Component {
 
 onSubmit(value) {
-  // console.log('Adding monthly income:', value.monthlyIncome);
   this.props.dispatch(addIncome(value.monthlyIncome));
 }
 
