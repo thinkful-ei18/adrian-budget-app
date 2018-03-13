@@ -1,4 +1,4 @@
-import {FETCH_BILLS_REQUEST, FETCH_BILLS_SUCCESS, FETCH_BILLS_ERROR} from '../actions/bills'
+import {FETCH_BILLS_REQUEST, FETCH_BILLS_SUCCESS, FETCH_BILLS_ERROR, ADD_BILL} from '../actions/bills'
 
 import {ADD_INCOME} from '../actions/income'
 
@@ -45,8 +45,13 @@ export function billsReducer(state=initialState, action) {
     return Object.assign({}, state,
       {
       income: action.amount,
-      loading: false,
-      error: null
+      });
+  }
+  else if (action.type === ADD_BILL) {
+
+    return Object.assign({}, state,
+      {
+      list: action.bill,
       });
   }
   return state;
