@@ -25,7 +25,7 @@ export function billsReducer(state=initialState, action) {
 
     return Object.assign({}, state,
       {
-      cheeses: action.data,
+      list: action.data,
       loading: false,
       error: null
       });
