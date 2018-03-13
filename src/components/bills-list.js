@@ -1,24 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchBills} from '../actions/bills';
-
+import sumOfKeys from '../utils/sumofkeys'
 export class billsList extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(fetchBills());
     }
 
-    sumOfKeys = (expenses, key) => {
-      // extract this function & import it later!
-      let total = 0;
-      expenses.forEach(expense => {
-      total = total + expense[key];
-    });
-    return total;
-    }
+
 
   render () {
-    const sumOfBills = this.sumOfKeys(this.props.bills, 'amount');
+    const sumOfBills = sumOfKeys(this.props.bills, 'amount');
     const afterBills = this.props.income - sumOfBills;
 
     const allBills = this.props.bills.map((bill, index) =>
