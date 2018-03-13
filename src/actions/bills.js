@@ -1,0 +1,31 @@
+export const FETCH_BILLS_REQUEST = 'FETCH_BILLS_REQUEST';
+export const fetchBillsRequest = () => ({
+    type: FETCH_BILLS_REQUEST
+});
+
+export const FETCH_BILLS_SUCCESS = 'FETCH_BILLS_SUCCESS';
+export const fetchBillsSuccess = data => ({
+    type: FETCH_BILLS_SUCCESS,
+    data
+});
+
+export const FETCH_BILLS_ERROR = 'FETCH_BILLS_ERROR';
+export const fetchBillsError = error => ({
+    type: FETCH_BILLS_ERROR,
+    error
+});
+
+export const fetchBills = bills => dispatch => {
+  console.log('Fetching bills....');
+  dispatch(fetchBillsRequest());
+  getBills(bills)
+    .then(bills => {
+    console.log('Found:', bills);
+    dispatch(fetchBillsSuccess(bills));
+    })
+    .catch(error => {
+    console.log('Could not find:', bills, 'Error:', error);
+    dispatch(fetchBillsError(error));
+  });
+
+};
