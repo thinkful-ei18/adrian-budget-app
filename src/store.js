@@ -8,7 +8,7 @@ import {billsReducer} from './reducers/bills';
 
 export default createStore (
   combineReducers({
-    billsReducer,
+    bills: billsReducer,
     form: formReducer
   }), composeWithDevTools(
       applyMiddleware(thunk),

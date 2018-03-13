@@ -1,22 +1,15 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {fetchBills} from '../actions/bills';
 
-export default class billsList extends React.Component {
+export class billsList extends React.Component {
 
-
+  componentDidMount() {
+    this.props.dispatch(fetchBills());
+    }
 
   render () {
-
-    // const staticBills = ['Internet $65', 'Groceries $250'];
-    const staticBills = [
-      {name: 'Internet',
-      amount: 65,
-    },
-    {name: 'Groceries',
-    amount: 250,
-    },
-    ];
-
-    const bills = staticBills.map((bill, index) =>
+    const allBills = this.props.bills.map((bill, index) =>
   <li key={index} className="budget-list-bill">
     {bill.name}, ${bill.amount}
   </li>
@@ -27,7 +20,7 @@ export default class billsList extends React.Component {
         <h2>Bills List</h2>
         <p>Here are all of your bills</p>
         <ul>
-          {bills}
+          {allBills}
         </ul>
         <p>Total $465</p>
         <p>After Bills: $1,535 left</p>
@@ -35,3 +28,9 @@ export default class billsList extends React.Component {
     );
   };
 }
+
+const mapStateToProps = state => ({
+  bills: state.bills.list
+});
+
+export default connect(mapStateToProps)(billsList);

@@ -1,7 +1,7 @@
 import {FETCH_BILLS_REQUEST, FETCH_BILLS_SUCCESS, FETCH_BILLS_ERROR} from '../actions/bills'
 
 const initialState = {
-  bills:
+  list:
   [{name: 'Internet',
   amount: 65,
   },
