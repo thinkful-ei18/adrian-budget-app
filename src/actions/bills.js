@@ -1,5 +1,11 @@
 import {API_BASE_URL} from '../config';
 
+export const ADD_BILL = 'ADD_BILL';
+export const addBill = bill => ({
+    type: ADD_BILL,
+    bill
+});
+
 export const FETCH_BILLS_REQUEST = 'FETCH_BILLS_REQUEST';
 export const fetchBillsRequest = () => ({
     type: FETCH_BILLS_REQUEST
