@@ -1,4 +1,4 @@
-import {API_BASE_URL} from './config';
+import {API_BASE_URL} from '../config.js';
 
 export const FETCH_BILLS_REQUEST = 'FETCH_BILLS_REQUEST';
 export const fetchBillsRequest = () => ({

@@ -1,9 +1,16 @@
-import {createStore, combineReducers} from 'redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {reducer as formReducer} from 'redux-form';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import {billsReducer} from './reducers/bills';
 
-export default createStore(
+
+
+export default createStore (
   combineReducers({
+    billsReducer,
     form: formReducer
-  }),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  }), composeWithDevTools(
+      applyMiddleware(thunk),
+  )
 );
