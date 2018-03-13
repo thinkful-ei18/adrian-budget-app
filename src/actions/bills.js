@@ -1,3 +1,5 @@
+import {API_BASE_URL} from './config';
+
 export const FETCH_BILLS_REQUEST = 'FETCH_BILLS_REQUEST';
 export const fetchBillsRequest = () => ({
     type: FETCH_BILLS_REQUEST
@@ -14,6 +16,16 @@ export const fetchBillsError = error => ({
     type: FETCH_BILLS_ERROR,
     error
 });
+
+export default function getBills(bills) {
+
+  return fetch(`${API_BASE_URL}/bills`).then(res => {
+      if (!res.ok) {
+          return Promise.reject(res.statusText);
+      }
+      return res.json();
+  }).then(data => data.map(bill => bill));
+}
 
 export const fetchBills = bills => dispatch => {
   console.log('Fetching bills....');
