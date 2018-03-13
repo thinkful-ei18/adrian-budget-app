@@ -11,14 +11,15 @@ export class billsList extends React.Component {
 
 
   render () {
-    const sumOfBills = sumOfKeys(this.props.bills, 'amount');
-    const afterBills = this.props.income - sumOfBills;
 
     const allBills = this.props.bills.map((bill, index) =>
   <li key={index} className="budget-list-bill">
     {bill.name}, ${bill.amount}
   </li>
 );
+
+  const sumOfBills = sumOfKeys(this.props.bills, 'amount');
+  const afterBills = this.props.income - sumOfBills;
 
     return (
       <div className="budget-list">
