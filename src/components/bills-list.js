@@ -8,18 +8,18 @@ export class billsList extends React.Component {
     this.props.dispatch(fetchBills());
     }
 
-    sumOfBills = (obj) => {
-      let sum = 0;
-      for(let value in obj) {
-        if (typeof obj[value] === 'number') {
-          sum+= parseFloat(obj[value]);
-        }
-      }
-      return console.log(sum);
-      // return sum;
+    sumOfKeys = (expenses, key) => {
+      // extract this function & import it later!
+      let total = 0;
+      expenses.forEach(expense => {
+      total = total + expense[key];
+    });
+    return total;
     }
 
   render () {
+    const sumOfBills = this.sumOfKeys(this.props.bills, 'amount');
+    const afterBills = this.props.income - sumOfBills;
 
     const allBills = this.props.bills.map((bill, index) =>
   <li key={index} className="budget-list-bill">
@@ -35,8 +35,8 @@ export class billsList extends React.Component {
         <ul>
           {allBills}
         </ul>
-        <p>Total ${}</p>
-        <p>After Bills: $1,535 left</p>
+        <p>Total ${sumOfBills}</p>
+        <p>After Bills: ${afterBills} left</p>
       </div>
     );
   };
