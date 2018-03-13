@@ -1,5 +1,7 @@
 import {FETCH_BILLS_REQUEST, FETCH_BILLS_SUCCESS, FETCH_BILLS_ERROR} from '../actions/bills'
 
+import {ADD_INCOME} from '../actions/income'
+
 const initialState = {
   list:
   [{name: 'Internet',
@@ -36,6 +38,15 @@ export function billsReducer(state=initialState, action) {
       {
         error: action.error,
         loading: false
+      });
+  }
+  else if (action.type === ADD_INCOME) {
+
+    return Object.assign({}, state,
+      {
+      income: action.amount,
+      loading: false,
+      error: null
       });
   }
   return state;
