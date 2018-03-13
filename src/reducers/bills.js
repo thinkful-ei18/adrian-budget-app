@@ -8,6 +8,7 @@ const initialState = {
   {name: 'Groceries',
   amount: 250,
   }],
+  income: 0,
   loading: false,
   error: null
 }
