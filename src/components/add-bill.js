@@ -12,14 +12,14 @@ export function addBill (props) {
       <p>Add a name and dollar amount for your monthly bills</p>
       <form className="add-bill">
       <Field
-        name="bill-name"
+        name="name"
         label="Bill Name"
         type="text"
         component={Input}
         validate={[required, nonEmpty]}
       />
       <Field
-        name="bill-amount"
+        name="amount"
         label="Bill Amount"
         type="number"
         component={Input}
