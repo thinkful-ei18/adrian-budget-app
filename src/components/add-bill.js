@@ -8,6 +8,7 @@ import { required, nonEmpty, numbersOnly } from  '../validators';
 export class addBill extends React.Component {
 
   onSubmit(values) {
+    console.log(values);
     // this.props.dispatch(addBill(values));
   }
 
@@ -17,7 +18,7 @@ export class addBill extends React.Component {
       <div className="budget-add-bill">
       <h2>Add A Bill</h2>
         <p>Add a name and dollar amount for your monthly bills</p>
-        <form className="add-bill">
+        <form className="add-bill" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
         <Field
           name="name"
           label="Bill Name"
