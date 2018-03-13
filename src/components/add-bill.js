@@ -2,10 +2,11 @@ import React from 'react';
 import { reduxForm, Field} from 'redux-form';
 import Input from './input';
 import { required, nonEmpty, numbersOnly } from  '../validators';
+import { addBill } from '../actions/bills';
 
 
 
-export class addBill extends React.Component {
+export class newBill extends React.Component {
 
   onSubmit(values) {
     console.log(values);
@@ -42,4 +43,4 @@ export class addBill extends React.Component {
 
 export default reduxForm({
   form: 'bills'
-})(addBill);
+})(newBill);
