@@ -68,7 +68,6 @@ export function billsReducer(state=initialState, action) {
 
     return Object.assign({}, state,
       {
-      list: [...state.list, action.bill],
       loading: false,
       error: null
       });
