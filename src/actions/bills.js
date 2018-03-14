@@ -91,7 +91,7 @@ dispatch(postBillRequest());
         return res.json(res);
       })
       .then(bill => {
-          dispatch(postBillSuccess(bill[0]))
+          dispatch(postBillSuccess(bill))
       })
       .catch(error => {
           dispatch(postBillError(error));
