@@ -23,7 +23,7 @@ export const fetchBillsError = error => ({
     error
 });
 
-export default function getBills(bills) {
+export function getBills(bills) {
 
   return fetch(`${API_BASE_URL}/bills`).then(res => {
       if (!res.ok) {
@@ -64,3 +64,62 @@ export const postBillError = error => ({
     type: POST_BILL_ERROR,
     error
 });
+
+export function postBill(bill) {
+
+    return fetch('https://us-central1-delivery-form-api.cloudfunctions.net/api/report', {
+      method: 'POST',
+      body: JSON.stringify(bill),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+        if (!res.ok) {
+          if (
+            res.headers.has('content-type') &&
+            res.headers
+              .get('content-type')
+              .startsWith('application/json')
+          ) {
+            return res.json().then(err => Promise.reject(err));
+          }
+          return Promise.reject({
+            code: res.status,
+            message: res.statusText
+        });
+        }
+        return;
+      })
+      .then(() => console.log('Submitted form with:', values))
+      .catch(err => {
+        const {reason, message, location} = err;
+        if (reason === 'ValidationError') {
+            // Convert ValidationErrors into SubmissionErrors for Redux Form
+        return Promise.reject(
+            new SubmissionError({
+                [location]: message
+            })
+          );
+        }
+        return Promise.reject(
+            new SubmissionError({
+                _error: 'Error submitting message'
+            })
+        );
+      });
+  }
+
+  export const createBill = bill => dispatch => {
+    console.log('Posting bill....');
+    dispatch(postBillRequest());
+    postBill(bill)
+      .then(bill => {
+      console.log('Posted:', bill);
+      dispatch(postBillSuccess(bill));
+      })
+      .catch(error => {
+      console.log('Could not post:', bill, 'Error:', error);
+      dispatch(postBillError(error));
+    });
+  };
