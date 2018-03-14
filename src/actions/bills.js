@@ -90,11 +90,10 @@ dispatch(postBillRequest());
             message: res.statusText
         });
     }
-
         return res.json(res);
       })
       .then(bill => {
-          dispatch(postBillSuccess(bill))
+          dispatch(postBillSuccess(bill[0]))
       })
       .catch(error => {
           dispatch(postBillError(error));
