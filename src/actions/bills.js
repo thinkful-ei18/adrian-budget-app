@@ -54,9 +54,9 @@ export const postBillRequest = () => ({
 });
 
 export const POST_BILL_SUCCESS = 'POST_BILL_SUCCESS';
-export const postBillSuccess = data => ({
+export const postBillSuccess = bill => ({
     type: POST_BILL_SUCCESS,
-    data
+    bill
 });
 
 export const POST_BILL_ERROR = 'POST_BILL_ERROR';
@@ -65,7 +65,8 @@ export const postBillError = error => ({
     error
 });
 
-export function postBill(bill) {
+export const postBill = bill => dispatch => {
+dispatch(postBillRequest());
 
     return fetch(`${API_BASE_URL}/bills`, {
       method: 'POST',
@@ -88,22 +89,15 @@ export function postBill(bill) {
             code: res.status,
             message: res.statusText
         });
-        }
-        return;
+    }
+
+        return res.json(res);
+      })
+      .then(bill => {
+          dispatch(postBillSuccess(bill))
+      })
+      .catch(error => {
+          dispatch(postBillError(error));
       })
       .then(() => console.log('Added new bill:', bill))
   }
-
-  export const createBill = bill => dispatch => {
-    console.log('Posting bill....');
-    dispatch(postBillRequest());
-    postBill(bill)
-      .then(bill => {
-      console.log('Posted:', bill);
-      dispatch(postBillSuccess(bill));
-      })
-      .catch(error => {
-      console.log('Could not post:', bill, 'Error:', error);
-      dispatch(postBillError(error));
-    });
-  };
