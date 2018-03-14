@@ -34,15 +34,13 @@ export function getBills(bills) {
 }
 
 export const fetchBills = bills => dispatch => {
-  console.log('Fetching bills....');
+
   dispatch(fetchBillsRequest());
   getBills(bills)
     .then(bills => {
-    console.log('Found:', bills);
     dispatch(fetchBillsSuccess(bills));
     })
     .catch(error => {
-    console.log('Could not find:', bills, 'Error:', error);
     dispatch(fetchBillsError(error));
   });
 
