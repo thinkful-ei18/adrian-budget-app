@@ -67,7 +67,7 @@ export const postBillError = error => ({
 
 export function postBill(bill) {
 
-    return fetch('https://us-central1-delivery-form-api.cloudfunctions.net/api/report', {
+    return fetch(`${API_BASE_URL}/bills`, {
       method: 'POST',
       body: JSON.stringify(bill),
       headers: {

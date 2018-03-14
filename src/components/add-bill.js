@@ -2,7 +2,7 @@ import React from 'react';
 import { reduxForm, Field} from 'redux-form';
 import Input from './input';
 import { required, nonEmpty, numbersOnly } from  '../validators';
-import { addBill } from '../actions/bills';
+import { createBill } from '../actions/bills';
 
 
 
@@ -10,7 +10,7 @@ export class newBill extends React.Component {
 
   onSubmit(values) {
     values.amount = parseInt(values.amount, 10);
-    this.props.dispatch(addBill(values));
+    this.props.dispatch(createBill(values));
   }
 
   render () {
