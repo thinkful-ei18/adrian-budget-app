@@ -47,3 +47,20 @@ export const fetchBills = bills => dispatch => {
   });
 
 };
+
+export const POST_BILL_REQUEST = 'POST_BILL_REQUEST';
+export const postBillRequest = () => ({
+    type: POST_BILL_REQUEST
+});
+
+export const POST_BILL_SUCCESS = 'POST_BILL_SUCCESS';
+export const postBillSuccess = data => ({
+    type: POST_BILL_SUCCESS,
+    data
+});
+
+export const POST_BILL_ERROR = 'POST_BILL_ERROR';
+export const postBillError = error => ({
+    type: POST_BILL_ERROR,
+    error
+});
