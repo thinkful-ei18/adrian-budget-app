@@ -91,7 +91,7 @@ export function postBill(bill) {
         }
         return;
       })
-      .then(() => console.log('Submitted form with:', values))
+      .then(() => console.log('Added new bill:', bill))
       .catch(err => {
         const {reason, message, location} = err;
         if (reason === 'ValidationError') {
