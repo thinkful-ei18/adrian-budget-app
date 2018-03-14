@@ -9,7 +9,7 @@ import { addBill } from '../actions/bills';
 export class newBill extends React.Component {
 
   onSubmit(values) {
-    // console.log(values);
+    values.amount = parseInt(values.amount, 10);
     this.props.dispatch(addBill(values));
   }
 
