@@ -92,22 +92,6 @@ export function postBill(bill) {
         return;
       })
       .then(() => console.log('Added new bill:', bill))
-    //   .catch(err => {
-    //     const {reason, message, location} = err;
-    //     if (reason === 'ValidationError') {
-    //         // Convert ValidationErrors into SubmissionErrors for Redux Form
-    //     return Promise.reject(
-    //         new SubmissionError({
-    //             [location]: message
-    //         })
-    //       );
-    //     }
-    //     return Promise.reject(
-    //         new SubmissionError({
-    //             _error: 'Error submitting message'
-    //         })
-    //     );
-    //   });
   }
 
   export const createBill = bill => dispatch => {
