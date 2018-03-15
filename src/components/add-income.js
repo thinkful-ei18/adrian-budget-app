@@ -3,6 +3,7 @@ import { reduxForm, Field} from 'redux-form';
 import Input from './input';
 import { required, nonEmpty, numbersOnly } from  '../validators';
 import { addIncome } from '../actions/income';
+import './css/add.income.css';
 
 
 export class AddIncome extends React.Component {
