@@ -2,7 +2,6 @@ import React from 'react';
 import { reduxForm, Field} from 'redux-form';
 import {connect} from 'react-redux';
 import Input from './input';
-import { required, nonEmpty } from  '../validators'
 
 export class BillsCheckbox extends React.Component {
 
