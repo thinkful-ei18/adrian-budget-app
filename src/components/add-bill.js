@@ -20,7 +20,7 @@ export class newBill extends React.Component {
       <div className="budget-add-bill">
       <h2>Add A Bill</h2>
         <p>Add a name and dollar amount for your monthly bills</p>
-        <form className="add-bill" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
+        <form className="pure-form pure-form-aligned" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
         <Field
           name="name"
           label="Bill Name"
@@ -35,7 +35,7 @@ export class newBill extends React.Component {
           component={Input}
           validate={[required, nonEmpty, numbersOnly]}
         />
-        <button type="submit">Submit</button>
+        <button className="pure-button" type="submit">Submit</button>
         </form>
       </div>
     );
