@@ -5,6 +5,10 @@ import Input from './input';
 
 export class BillsCheckbox extends React.Component {
 
+  onSubmit(value) {
+    console.log(value, 'clicked!');
+  }
+
   render() {
     let allBills;
     if (this.props.bills) {
