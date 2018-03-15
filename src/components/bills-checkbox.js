@@ -1,30 +1,45 @@
 import React from 'react';
 import { reduxForm, Field} from 'redux-form';
+import {connect} from 'react-redux';
 import Input from './input';
 import { required, nonEmpty } from  '../validators'
 
-export function BillsCheckbox (props) {
+export class BillsCheckbox extends React.Component {
 
-  return (
-    <div className="budget-bills-checkbox">
-    <form className="pure-form">
-      <Field
-        name="paid-bills"
-        label="What bills have you paid so far?"
-        component={Input}
-        element="select"
-        validate={[required, nonEmpty]}
-        >
-        <option value=""></option>
-        <option value="Internet">Internet</option>
-        <option value="Groceries">Groceries</option>
-        <option value="Utilities">Utilities</option>
-      </Field>
-      </form>
-    </div>
-  );
+  render() {
+    let allBills;
+    if (this.props.bills) {
+      allBills = this.props.bills.map((bill, index) =>
+      (
+        <Field
+          key={index}
+          name={`paid-bills-${index}`}
+          label={bill.name}
+          component={Input}
+          type="checkbox"
+          />
+      )
+    );
+  }
+
+    return (
+      <div className="budget-bills-checkbox">
+      <form className="pure-form">
+          {allBills}
+        </form>
+      </div>
+    );
+  }
 }
+
+const mapStateToProps = state => ({
+  bills: state.bills.list,
+});
+
+ const mappedBillsCheckbox = connect(
+  mapStateToProps
+)(BillsCheckbox);
 
 export default reduxForm({
   form: 'bills-checkbox'
-})(BillsCheckbox);
+})(mappedBillsCheckbox);
