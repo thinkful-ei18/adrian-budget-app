@@ -22,11 +22,14 @@ export class billsList extends React.Component {
 
   const sumOfBills = sumOfKeys(this.props.bills, 'amount');
   const afterBills = this.props.income - sumOfBills;
+  const biWeekly = this.props.income / 2;
 
     return (
       <div className="pure-menu custom-restricted-width">
         <h2 className="pure-menu-heading">Bills List</h2>
-        <p>Your monthly income is: ${this.props.income}</p>
+        <p>Your monthly income is: ${this.props.income}
+        <br/>Every two weeks, you make: ${biWeekly}
+        </p>
         <h3>Here are all of your bills ({this.props.bills.length} total):</h3>
         <ul className="pure-menu-list">
           {allBills}
