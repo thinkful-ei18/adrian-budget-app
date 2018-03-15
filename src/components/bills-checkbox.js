@@ -7,6 +7,7 @@ export function BillsCheckbox (props) {
 
   return (
     <div className="budget-bills-checkbox">
+    <form className="pure-form">
       <Field
         name="paid-bills"
         label="What bills have you paid so far?"
@@ -19,6 +20,7 @@ export function BillsCheckbox (props) {
         <option value="Groceries">Groceries</option>
         <option value="Utilities">Utilities</option>
       </Field>
+      </form>
     </div>
   );
 }
