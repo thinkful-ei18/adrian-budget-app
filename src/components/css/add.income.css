@@ -1,3 +1,7 @@
 .budget-income {
-  
+  display: inline-block;
+}
+
+.budget-income * {
+  margin: 10px;
 }
