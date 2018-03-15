@@ -3,6 +3,7 @@ import { reduxForm, Field} from 'redux-form';
 import Input from './input';
 import { required, nonEmpty, numbersOnly } from  '../validators';
 import { postBill } from '../actions/bills';
+import './css/add.bill.css';
 
 
 
