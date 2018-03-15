@@ -13,7 +13,7 @@ export class billsList extends React.Component {
     if (this.props.bills) {
       allBills = this.props.bills.map((bill, index) =>
       (
-        <li key={index} className="budget-list-bill">
+        <li className="pure-menu-item" key={index}>
           {bill.name}, ${bill.amount}
         </li>
       )
@@ -24,11 +24,11 @@ export class billsList extends React.Component {
   const afterBills = this.props.income - sumOfBills;
 
     return (
-      <div className="budget-list">
-        <h2>Bills List</h2>
+      <div className="pure-menu custom-restricted-width">
+        <h2 className="pure-menu-heading">Bills List</h2>
         <p>Your monthly income is: ${this.props.income}</p>
         <h3>Here are all of your bills ({this.props.bills.length} total):</h3>
-        <ul>
+        <ul className="pure-menu-list">
           {allBills}
         </ul>
         <p>Total ${sumOfBills}</p>

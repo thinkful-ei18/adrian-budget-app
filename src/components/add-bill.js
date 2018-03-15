@@ -18,7 +18,7 @@ export class newBill extends React.Component {
 
     return (
       <div className="budget-add-bill">
-      <h2>Add A Bill</h2>
+      <h2 className="pure-menu-heading">Add A Bill</h2>
         <p>Add a name and dollar amount for your monthly bills</p>
         <form className="pure-form pure-form-aligned" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
         <Field
