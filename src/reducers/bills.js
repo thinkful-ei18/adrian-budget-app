@@ -1,4 +1,4 @@
-import {FETCH_BILLS_REQUEST, FETCH_BILLS_SUCCESS, FETCH_BILLS_ERROR, ADD_BILL, POST_BILL_REQUEST, POST_BILL_SUCCESS, POST_BILL_ERROR} from '../actions/bills'
+import {FETCH_BILLS_REQUEST, FETCH_BILLS_SUCCESS, FETCH_BILLS_ERROR, POST_BILL_REQUEST, POST_BILL_SUCCESS, POST_BILL_ERROR} from '../actions/bills'
 
 import {ADD_INCOME} from '../actions/income'
 
@@ -24,7 +24,6 @@ export function billsReducer(state=initialState, action) {
       error: null
     });
   }
-
   else if (action.type === FETCH_BILLS_SUCCESS) {
 
     return Object.assign({}, state,
@@ -48,14 +47,6 @@ export function billsReducer(state=initialState, action) {
       income: action.amount,
       });
   }
-  else if (action.type === ADD_BILL) {
-
-    return Object.assign({}, state,
-      {
-      list: [...state.list, action.bill]
-      });
-  }
-
   else if (action.type === POST_BILL_REQUEST) {
     return Object.assign({}, state,
     {
@@ -63,7 +54,6 @@ export function billsReducer(state=initialState, action) {
       error: null
     });
   }
-
   else if (action.type === POST_BILL_SUCCESS) {
 
     return Object.assign({}, state,
