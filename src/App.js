@@ -17,13 +17,11 @@ class App extends Component {
       <Switch>
         <Route exact path='/'>
           <div className="pure-g">
-            <div className="pure-u-1-3">
+            <div className="pure-u-1-2">
 
             </div>
-            <div className="pure-u-1-3">
+            <div className="pure-u-1-2">
               <LoginForm/>
-            </div>
-            <div className="pure-u-1-3">
               <SignUpForm/>
             </div>
           </div>
