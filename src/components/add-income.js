@@ -17,7 +17,7 @@ return (
     <div className="budget-income">
     <h1>Add your monthly income!</h1>
     <p>Add your expected monthly income.</p>
-      <form className="pure-form pure-form-aligned" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
+      <form className="pure-form pure-form-stacked" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
         <Field
           name="monthlyIncome"
           label="Monthly Income"
@@ -25,7 +25,7 @@ return (
           component={Input}
           validate={[required, nonEmpty, numbersOnly]}
         />
-        <button className="pure-button" type="submit">Submit</button>
+        <button className="pure-button pure-button-primary" type="submit">Submit</button>
       </form>
     </div>
     );
