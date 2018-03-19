@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 
 import About from './components/about';
 import Navbar from './components/navbar';
+import Income from './components/income';
 import AddIncome from './components/add-income';
 import AddBills from './components/add-bill';
 import BillsList from './components/bills-list';
@@ -28,12 +29,10 @@ class App extends Component {
             </div>
           </div>
         </Route>
-        <Route path="/onboarding">
+        <Route path="/onboarding-income">
         <div className="pure-g">
             <div className="pure-u-1-1">
-              <About/>
-              <AddIncome/>
-              <AddBills/>
+              <Income/>
             </div>
         </div>
         </Route>

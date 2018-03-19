@@ -7,7 +7,7 @@ export default function navbar (props) {
       <ul className="pure-menu-list">
         <li className="pure-menu-item"><Link to="/">Logout</Link></li>
         <li className="pure-menu-item"><a href="" class="pure-menu-link">Update Your Income</a></li>
-        <li className="pure-menu-item"><a href="" class="pure-menu-link">Add A Bill</a></li>
+        <li className="pure-menu-item"><a href="" class="pure-menu-link">New Bill</a></li>
       </ul>
     </nav>
   );

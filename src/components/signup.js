@@ -30,7 +30,7 @@ export function signUpForm (props) {
         type="text"
         validate={[required, nonEmpty]}
         />
-        <Link to="/onboarding">
+        <Link to="/onboarding-income">
           <button type="submit" className="pure-button pure-button-primary">Sign Up</button>
         </Link>
       </form>
