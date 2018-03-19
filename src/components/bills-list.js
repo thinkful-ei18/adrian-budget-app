@@ -15,7 +15,7 @@ export class billsList extends React.Component {
       allBills = this.props.bills.map((bill, index) =>
       (
         <li className="pure-menu-item" key={index}>
-          {bill.name}, ${bill.amount}
+          <Bill name={bill.name} amount={bill.amount}/>
         </li>
       )
     );
