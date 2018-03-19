@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function onboarding (props) {
+export default function about (props) {
   return (
     <div>
       <h1>Budget App</h1>
