@@ -6,6 +6,7 @@ import AddBills from './components/add-bill';
 import BillsList from './components/bills-list';
 import BillsCheckbox from './components/bills-checkbox';
 import SignUpForm from './components/signup';
+import LoginForm from './components/login';
 
 {/* <div className="App">
         <header className="App-header">
@@ -36,6 +37,7 @@ class App extends Component {
         </div>
         <div class="pure-u-1-3">
           <SignUpForm />
+          <LoginForm/>
         </div>
       </div>
     );
