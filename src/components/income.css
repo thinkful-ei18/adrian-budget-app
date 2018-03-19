@@ -1,0 +1,10 @@
+p {
+  display: inline;
+}
+
+input[type="number"]
+{
+    display: inline;
+    background: transparent;
+    border: none;
+}

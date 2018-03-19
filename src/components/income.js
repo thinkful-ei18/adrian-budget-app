@@ -3,6 +3,7 @@ import { reduxForm, Field} from 'redux-form';
 import Input from './input';
 import { required, nonEmpty, numbersOnly } from  '../validators';
 import { addIncome } from '../actions/income';
+import './income.css';
 
 
 export class AddIncome extends React.Component {
@@ -15,17 +16,18 @@ render () {
 
 return (
     <main className="budget-income">
-    <p>A</p>
-      <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
-        <Field
-          name="monthlyIncome"
-          label="Monthly Income"
-          type="number"
-          component={Input}
-          validate={[required, nonEmpty, numbersOnly]}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <h1>Let's get started.</h1>
+      <p>My monthly income is</p>
+        <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
+          <Field
+            name="monthlyIncome"
+            label="Monthly Income"
+            type="number"
+            component="input"
+            validate={[required, nonEmpty, numbersOnly]}
+          />
+          <button className="pure-button pure-button-primary" type="submit">Submit</button>
+        </form>
     </main>
     );
   }
