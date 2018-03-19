@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div class="pure-g">
         <div class="pure-u-1-3">
-          <AddIncome/>
+          <AddIncome />
           <AddBills />
         </div>
         <div class="pure-u-1-3">
@@ -19,7 +19,7 @@ class App extends Component {
         </div>
         <div class="pure-u-1-3">
           <SignUpForm />
-          <LoginForm/>
+          <LoginForm />
         </div>
       </div>
     );
