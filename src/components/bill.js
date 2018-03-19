@@ -1,4 +1,5 @@
 import React from 'react';
+import './bill.css';
 
 export default function Bill (props) {
   return (
