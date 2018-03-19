@@ -2,6 +2,7 @@ import React from 'react';
 import Input from './input';
 import {reduxForm, Field} from 'redux-form';
 import {required, nonEmpty} from '../validators';
+import { Link } from 'react-router-dom';
 
 export function signUpForm (props) {
   return (
@@ -29,7 +30,9 @@ export function signUpForm (props) {
         type="text"
         validate={[required, nonEmpty]}
         />
-        <button type="submit" className="pure-button pure-button-primary">Sign Up</button>
+        <Link to="/bills">
+          <button type="submit" className="pure-button pure-button-primary">Sign Up</button>
+        </Link>
       </form>
     </div>
   );
