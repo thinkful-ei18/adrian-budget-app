@@ -4,11 +4,11 @@ import {ADD_INCOME} from '../actions/income'
 
 const initialState = {
   list:
-  [{name: 'Internet',
-  amount: 65,
+  [{name: 'Good Vibes',
+  amount: 0,
   },
-  {name: 'Groceries',
-  amount: 250,
+  {name: 'Happiness',
+  amount: 0,
   }],
   income: 0,
   loading: false,
