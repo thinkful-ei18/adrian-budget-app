@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { Route, Switch } from 'react-router-dom';
 
+import Onboarding from './components/onboarding';
 import AddIncome from './components/add-income';
 import AddBills from './components/add-bill';
 import BillsList from './components/bills-list';
@@ -18,7 +19,7 @@ class App extends Component {
         <Route exact path='/'>
           <div className="pure-g">
             <div className="pure-u-1-2">
-
+              <Onboarding/>
             </div>
             <div className="pure-u-1-2">
               <LoginForm/>
