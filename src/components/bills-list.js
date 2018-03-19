@@ -25,8 +25,8 @@ export class billsList extends React.Component {
   const biWeekly = this.props.income / 2;
 
     return (
-      <div className="pure-menu custom-restricted-width">
-        <h2 className="pure-menu-heading">Bills List</h2>
+      <div className="pure-menu">
+        <h1>Bills List</h1>
         <p>Your monthly income is: ${this.props.income}
         <br/>Every two weeks, you make: ${biWeekly}
         </p>

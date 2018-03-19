@@ -15,7 +15,7 @@ render () {
 
 return (
     <div className="budget-income">
-    <h2 className="pure-menu-heading">Add your monthly income!</h2>
+    <h1>Add your monthly income!</h1>
     <p>Add your expected monthly income.</p>
       <form className="pure-form pure-form-aligned" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
         <Field
