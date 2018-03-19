@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './dollar.svg';
 import AddIncome from './components/add-income';
 import AddBills from './components/add-bill';
 import BillsList from './components/bills-list';
