@@ -30,6 +30,7 @@ class App extends Component {
         <Route path="/onboarding">
         <div className="pure-g">
             <div className="pure-u-1-1">
+              <About/>
               <AddIncome/>
               <AddBills/>
             </div>
@@ -37,11 +38,7 @@ class App extends Component {
         </Route>
         <Route path="/bills">
         <div className="pure-g">
-            <div className="pure-u-1-2">
-              <AddIncome/>
-              <AddBills/>
-            </div>
-            <div className="pure-u-1-2">
+            <div className="pure-u-1-1">
               <BillsList/>
               <BillsCheckbox/>
             </div>
