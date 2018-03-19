@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import About from './components/about';
+import Navbar from './components/navbar';
 import AddIncome from './components/add-income';
 import AddBills from './components/add-bill';
 import BillsList from './components/bills-list';
@@ -37,8 +38,10 @@ class App extends Component {
         </div>
         </Route>
         <Route path="/bills">
+
         <div className="pure-g">
             <div className="pure-u-1-1">
+              <Navbar/>
               <BillsList/>
               <BillsCheckbox/>
             </div>
