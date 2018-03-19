@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Onboarding from './components/onboarding';
 import AddIncome from './components/add-income';
@@ -26,6 +26,18 @@ class App extends Component {
               <SignUpForm/>
             </div>
           </div>
+        </Route>
+        <Route path="/bills">
+        <div className="pure-g">
+            <div className="pure-u-1-2">
+              <AddIncome/>
+              <AddBills/>
+            </div>
+            <div className="pure-u-1-2">
+              <BillsList/>
+              <BillsCheckbox/>
+            </div>
+        </div>
         </Route>
 
       </Switch>
