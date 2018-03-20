@@ -1,6 +1,7 @@
-/* .budget-bills-list {
+.budget-bills-list {
   width: 80%;
   height: 85%;
+
 
   position: absolute;
   top:0;
@@ -9,8 +10,21 @@
   right: 0;
 
   margin: auto;
-} */
+}
 
-/* h2 {
-color: red;
-} */
+.budget-total {
+  background-color: lightskyblue;
+  border-radius: 5px;
+  color: #0C76E1;
+  font-weight: bold;
+  margin: 5px;
+  padding: 5px;
+}
+
+.budget-after {
+  background-color: yellow;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 5px;
+  padding: 5px;
+}

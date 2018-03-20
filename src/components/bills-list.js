@@ -38,14 +38,14 @@ export class billsList extends React.Component {
         </main>
         <section>
           <h2>
-            Here are all of your bills ({this.props.bills.length} total):
+            {/* Here are all of your bills ({this.props.bills.length} total): */}
           </h2>
             <ul className="pure-menu-list pure-g">
               {allBills}
             </ul>
-            <p>Total ${sumOfBills}
-              <br/>
-              After Bills: ${afterBills} left
+            <p className="pure-g">
+              <span className="budget-total pure-u-1-2">Total: ${sumOfBills}</span>
+              <span className="budget-after pure-u-1-2">After Bills: ${afterBills} left</span>
             </p>
         </section>
       </div>
