@@ -4,7 +4,13 @@ import './bill.css';
 export default function Bill (props) {
   return (
     <div className="bill">
-      <p>{props.name}: ${props.amount}</p>
+      <h1>
+        {props.name}
+        <br/>
+      </h1>
+      <p>
+        ${props.amount}
+      </p>
     </div>
   );
 }

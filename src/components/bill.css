@@ -1,7 +1,7 @@
 .bill {
-  background-color: lightblue;
+  background-color: #0C76E1;
+  color: white;
   border-radius: 5px;
   margin: 5px;
   padding: 5px;
-  text-align: center;
 }

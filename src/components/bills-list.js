@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {fetchBills} from '../actions/bills';
 import sumOfKeys from '../utils/sumofkeys'
 import Bill from './bill';
+import './bills-list.css';
 export class billsList extends React.Component {
 
   componentDidMount() {
@@ -14,7 +15,7 @@ export class billsList extends React.Component {
     if (this.props.bills) {
       allBills = this.props.bills.map((bill, index) =>
       (
-        <li className="pure-menu-item" key={index}>
+        <li className="pure-menu-item pure-u-1-3" key={index}>
           <Bill name={bill.name} amount={bill.amount}/>
         </li>
       )
@@ -36,7 +37,7 @@ export class billsList extends React.Component {
         <h2>
           Here are all of your bills ({this.props.bills.length} total):
         </h2>
-          <ul className="pure-menu-list">
+          <ul className="pure-menu-list pure-g">
             {allBills}
           </ul>
           <p>Total ${sumOfBills}
