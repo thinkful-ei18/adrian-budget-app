@@ -5,3 +5,8 @@
   margin: 5px;
   padding: 5px;
 }
+
+.bill-categories {
+  border-top: 1px white solid;
+  color: lightskyblue;
+}

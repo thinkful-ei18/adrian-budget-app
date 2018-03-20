@@ -4,13 +4,20 @@ import './bill.css';
 export default function Bill (props) {
   return (
     <div className="bill">
-      <h1>
-        {props.name}
+      <h3>
+      ${props.amount}
         <br/>
-      </h1>
+      </h3>
       <p>
-        ${props.amount}
+      {props.name}
       </p>
+      <div className="bill-categories">
+        <p>
+        Categories coming soon.
+
+        </p>
+
+      </div>
     </div>
   );
 }
