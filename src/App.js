@@ -8,7 +8,6 @@ import Income from './components/income';
 // import AddIncome from './components/add-income';
 // import AddBills from './components/add-bill';
 import BillsList from './components/bills-list';
-import BillsCheckbox from './components/bills-checkbox';
 import SignUpForm from './components/signup';
 import LoginForm from './components/login';
 import FirstBill from './components/firstbill';
@@ -19,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <Switch>
+
         <Route exact path='/'>
           <div className="pure-g">
             <div className="pure-u-1-2">
@@ -52,10 +52,10 @@ class App extends Component {
             <div className="pure-u-1-1">
               <Navbar/>
               <BillsList/>
-              <BillsCheckbox/>
             </div>
         </div>
         </Route>
+
       </Switch>
     );
   }
