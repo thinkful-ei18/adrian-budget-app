@@ -3,6 +3,7 @@ import { reduxForm, Field} from 'redux-form';
 import { required, nonEmpty, numbersOnly } from  '../validators';
 import { postBill } from '../actions/bills';
 import { Link } from 'react-router-dom';
+import './firstbill.css';
 
 
 export class newBill extends React.Component {
