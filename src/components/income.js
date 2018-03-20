@@ -17,9 +17,10 @@ render () {
 return (
     <main className="budget-income">
       <h1>Let's get started!</h1>
-        <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
+        <form className="pure-form pure-form-aligned" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
         <p>I make
           <Field
+            className="pure-input-1-8"
             name="monthlyIncome"
             label="Monthly Income"
             type="number"
