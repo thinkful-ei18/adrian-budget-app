@@ -2,8 +2,8 @@ import React from 'react';
 import { reduxForm, Field} from 'redux-form';
 import { required, nonEmpty, numbersOnly } from  '../validators';
 import { addIncome } from '../actions/income';
-import './income.css';
 import { Link } from 'react-router-dom';
+import './income.css';
 
 export class AddIncome extends React.Component {
 
