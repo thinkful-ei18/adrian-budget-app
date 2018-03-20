@@ -1,4 +1,4 @@
-.budget-income {
+.budget-firstbill {
   font-size: 150%;
   width: 80%;
   height: 25%;
@@ -13,7 +13,7 @@
   margin: auto;
 }
 
-.budget-income > p, input, button {
+.budget-firstbill > p, input, button {
   margin: 10px;
 }
 

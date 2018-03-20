@@ -16,25 +16,30 @@ export class newBill extends React.Component {
   render () {
 
     return (
-      <div className="budget-add-bill">
-      <h1>Add A Bill</h1>
-        <p>Add a name and dollar amount for your monthly bills</p>
-        <form className="pure-form pure-form-stacked" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
-        <Field
-          name="name"
-          label="Bill Name"
-          type="text"
-          component={Input}
-          validate={[required, nonEmpty]}
-        />
-        <Field
-          name="amount"
-          label="Bill Amount"
-          type="number"
-          component={Input}
-          validate={[required, nonEmpty, numbersOnly]}
-        />
-        <button className="pure-button pure-button-primary" type="submit">Submit</button>
+      <div className="budget-firstbill">
+        <h1>Cool! Let's add your first bill!</h1>
+        <form className="pure-form pure-form-aligned" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
+          <p>My first bill is called
+          <Field
+            className="pure-input-1-8"
+            name="name"
+            label="Bill Name"
+            type="text"
+            component="input"
+            validate={[required, nonEmpty]}
+          />
+          and it costs $
+          <Field
+            className="pure-input-1-8"
+            name="amount"
+            label="Bill Amount"
+            type="number"
+            component="input"
+            validate={[required, nonEmpty, numbersOnly]}
+          />
+          per month.
+          </p>
+          <button className="pure-button pure-button-primary" type="submit">Submit</button>
         </form>
       </div>
     );
