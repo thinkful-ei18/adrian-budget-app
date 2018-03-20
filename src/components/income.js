@@ -4,7 +4,7 @@ import Input from './input';
 import { required, nonEmpty, numbersOnly } from  '../validators';
 import { addIncome } from '../actions/income';
 import './income.css';
-
+import { Link } from 'react-router-dom';
 
 export class AddIncome extends React.Component {
 
@@ -28,7 +28,9 @@ return (
             validate={[required, nonEmpty, numbersOnly]}
           />
           dollars a month.</p>
+          <Link to="/onboarding-firstbill">
           <button className="pure-button pure-button-primary" type="submit">Submit</button>
+          </Link>
         </form>
     </main>
     );

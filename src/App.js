@@ -29,6 +29,7 @@ class App extends Component {
             </div>
           </div>
         </Route>
+
         <Route path="/onboarding-income">
         <div className="pure-g">
             <div className="pure-u-1-1">
@@ -36,8 +37,16 @@ class App extends Component {
             </div>
         </div>
         </Route>
-        <Route path="/bills">
 
+        <Route path="/onboarding-firstbill">
+        <div className="pure-g">
+            <div className="pure-u-1-1">
+              <Income/>
+            </div>
+        </div>
+        </Route>
+
+        <Route path="/bills">
         <div className="pure-g">
             <div className="pure-u-1-1">
               <Navbar/>
