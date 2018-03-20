@@ -11,6 +11,7 @@ import BillsList from './components/bills-list';
 import BillsCheckbox from './components/bills-checkbox';
 import SignUpForm from './components/signup';
 import LoginForm from './components/login';
+import FirstBill from './components/firstbill';
 
 
 
@@ -41,7 +42,7 @@ class App extends Component {
         <Route path="/onboarding-firstbill">
         <div className="pure-g">
             <div className="pure-u-1-1">
-              <Income/>
+              <FirstBill/>
             </div>
         </div>
         </Route>
