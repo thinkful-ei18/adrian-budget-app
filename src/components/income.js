@@ -18,7 +18,7 @@ return (
     <main className="budget-income">
       <h1>Let's get started!</h1>
         <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
-        <p>I make</p>
+        <p>I make
           <Field
             name="monthlyIncome"
             label="Monthly Income"
@@ -26,7 +26,7 @@ return (
             component="input"
             validate={[required, nonEmpty, numbersOnly]}
           />
-          <p>dollars a month.</p>
+          dollars a month.</p>
           <button className="pure-button pure-button-primary" type="submit">Submit</button>
         </form>
     </main>
