@@ -27,16 +27,22 @@ export class billsList extends React.Component {
 
     return (
       <div className="pure-menu budget-bills-list">
-        <h1>Bills List</h1>
-        <p>Your monthly income is: ${this.props.income}
-        <br/>Every two weeks, you make: ${biWeekly}
-        </p>
-        <h2>Here are all of your bills ({this.props.bills.length} total):</h2>
-        <ul className="pure-menu-list">
-          {allBills}
-        </ul>
-        <p>Total ${sumOfBills}</p>
-        <p>After Bills: ${afterBills} left</p>
+        <h1>
+          Bills List
+        </h1>
+          <p>Your monthly income is: ${this.props.income}
+            <br/>Every two weeks, you make: ${biWeekly}
+          </p>
+        <h2>
+          Here are all of your bills ({this.props.bills.length} total):
+        </h2>
+          <ul className="pure-menu-list">
+            {allBills}
+          </ul>
+          <p>Total ${sumOfBills}
+            <br/>
+            After Bills: ${afterBills} left
+          </p>
       </div>
     );
   };
