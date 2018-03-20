@@ -1,5 +1,5 @@
 .bill {
-  background-color: #0C76E1;
+  background-color: #0854A1;
   color: white;
   border-radius: 5px;
   margin: 5px;
@@ -18,5 +18,5 @@
 
 .bill-categories {
   border-top: 1px white solid;
-  color: lightskyblue;
+  color: #CCCCCC;
 }

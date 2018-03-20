@@ -37,9 +37,9 @@ export class billsList extends React.Component {
             </p>
         </main>
         <section>
-          <h2>
-            {/* Here are all of your bills ({this.props.bills.length} total): */}
-          </h2>
+          {/* <h2>
+            Here are all of your bills ({this.props.bills.length} total):
+          </h2> */}
             <ul className="pure-menu-list pure-g">
               {allBills}
             </ul>
