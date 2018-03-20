@@ -6,6 +6,16 @@
   padding: 5px;
 }
 
+.bill-amount {
+  color: yellow;
+}
+
+.bill-name {
+  display: inline-block;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
 .bill-categories {
   border-top: 1px white solid;
   color: lightskyblue;

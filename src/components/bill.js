@@ -5,18 +5,17 @@ export default function Bill (props) {
   return (
     <div className="bill">
       <h3>
-      ${props.amount}
-        <br/>
+        <span className="bill-amount">${props.amount} {props.beenpaid}</span>
       </h3>
       <p>
-      {props.name}
+        <span className="bill-name">{props.name}</span>
+        <br/>Due on {props.duedate}
+        <br/>{props.billinterval}
       </p>
       <div className="bill-categories">
         <p>
-        Categories coming soon.
-
+          Categories coming soon.
         </p>
-
       </div>
     </div>
   );
@@ -24,5 +23,8 @@ export default function Bill (props) {
 
 Bill.defaultProps = {
   name: 'Happiness',
-  amount: 0
+  amount: 0,
+  duedate: 'March 20, 2018',
+  billinterval: 'Once a month',
+  beenpaid: '(Unpaid)'
 };
