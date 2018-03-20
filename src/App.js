@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import About from './components/about';
 import Navbar from './components/navbar';
 import Income from './components/income';
-import AddIncome from './components/add-income';
-import AddBills from './components/add-bill';
+// import AddIncome from './components/add-income';
+// import AddBills from './components/add-bill';
 import BillsList from './components/bills-list';
 import BillsCheckbox from './components/bills-checkbox';
 import SignUpForm from './components/signup';

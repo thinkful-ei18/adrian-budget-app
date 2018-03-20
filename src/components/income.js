@@ -1,6 +1,5 @@
 import React from 'react';
 import { reduxForm, Field} from 'redux-form';
-import Input from './input';
 import { required, nonEmpty, numbersOnly } from  '../validators';
 import { addIncome } from '../actions/income';
 import './income.css';
