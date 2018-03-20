@@ -1,9 +1,8 @@
 import React from 'react';
 import { reduxForm, Field} from 'redux-form';
-import Input from './input';
 import { required, nonEmpty, numbersOnly } from  '../validators';
 import { postBill } from '../actions/bills';
-
+import { Link } from 'react-router-dom';
 
 
 export class newBill extends React.Component {
@@ -16,7 +15,7 @@ export class newBill extends React.Component {
   render () {
 
     return (
-      <div className="budget-firstbill">
+      <main className="budget-firstbill">
         <h1>Cool! Let's add your first bill!</h1>
         <form className="pure-form pure-form-aligned" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
           <p>My first bill is called
@@ -39,9 +38,11 @@ export class newBill extends React.Component {
           />
           per month.
           </p>
-          <button className="pure-button pure-button-primary" type="submit">Submit</button>
+          <Link to="/bills">
+            <button className="pure-button pure-button-primary" type="submit">Submit</button>
+          </Link>
         </form>
-      </div>
+      </main>
     );
   }
 }

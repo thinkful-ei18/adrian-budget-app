@@ -17,19 +17,19 @@ return (
     <main className="budget-income">
       <h1>Let's get started!</h1>
         <form className="pure-form pure-form-aligned" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
-        <p>I make
-          <Field
-            className="pure-input-1-8"
-            name="monthlyIncome"
-            label="Monthly Income"
-            type="number"
-            component="input"
-            validate={[required, nonEmpty, numbersOnly]}
-          />
-          dollars a month.</p>
-          <Link to="/onboarding-firstbill">
-          <button className="pure-button pure-button-primary" type="submit">Submit</button>
-          </Link>
+          <p>I make
+            <Field
+              className="pure-input-1-8"
+              name="monthlyIncome"
+              label="Monthly Income"
+              type="number"
+              component="input"
+              validate={[required, nonEmpty, numbersOnly]}
+            />
+            dollars a month.</p>
+            <Link to="/onboarding-firstbill">
+              <button className="pure-button pure-button-primary" type="submit">Submit</button>
+            </Link>
         </form>
     </main>
     );
