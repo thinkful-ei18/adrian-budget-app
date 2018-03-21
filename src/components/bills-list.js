@@ -42,7 +42,7 @@ export class billsList extends React.Component {
         </main>
         <section className="budget-overview pure-menu pure-g">
           <span className="budget-total pure-menu-item pure-u-1-2"><b>Total:</b> ${sumOfBills}</span>
-          <span className="budget-after pure-u-1-2"><b>After Bills:</b> ${afterBills} left</span>
+          <span className="budget-after pure-menu-item pure-u-1-2"><b>After Bills:</b> ${afterBills} left</span>
         </section>
       </div>
     );
