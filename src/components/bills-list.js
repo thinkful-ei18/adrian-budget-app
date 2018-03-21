@@ -30,8 +30,9 @@ export class billsList extends React.Component {
       <div>
         <main className="pure-menu budget-bills-list">
           <h1>Budget App</h1>
-          <p>Your monthly income is: ${this.props.income}
-            <br/>Every two weeks, you make: ${biWeekly}
+          <p className="budget-projection pure-g">
+          <span className="monthly-income pure-u-1-2">Your monthly income is <b>${this.props.income}</b></span>
+          <span className="biweekly-income pure-u-1-2">Every two weeks, you make <b>${biWeekly}</b></span>
           </p>
           {/* <h2>
             Here are all of your bills ({this.props.bills.length} total):
