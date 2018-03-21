@@ -1,10 +1,14 @@
 .bill {
   background-color: #0854A1;
-  color: white;
   border-radius: 5px;
+  color: white;
   margin: 5px;
   padding: 5px;
+
+  /* -webkit-filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
+  filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9)); */
 }
+
 
 .bill-amount {
   color: yellow;

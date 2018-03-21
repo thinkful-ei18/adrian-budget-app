@@ -27,26 +27,22 @@ export class billsList extends React.Component {
   const biWeekly = this.props.income / 2;
 
     return (
-      <div className="pure-menu budget-bills-list">
-        <main>
-          <h1>
-            Bills List
-          </h1>
-            <p>Your monthly income is: ${this.props.income}
-              <br/>Every two weeks, you make: ${biWeekly}
-            </p>
-        </main>
-        <section>
+      <div>
+        <main className="pure-menu budget-bills-list">
+          <h1>Bills List</h1>
+          <p>Your monthly income is: ${this.props.income}
+            <br/>Every two weeks, you make: ${biWeekly}
+          </p>
           {/* <h2>
             Here are all of your bills ({this.props.bills.length} total):
           </h2> */}
-            <ul className="pure-menu-list pure-g">
-              {allBills}
-            </ul>
-            <p className="pure-g">
-              <span className="budget-total pure-u-1-2">Total: ${sumOfBills}</span>
-              <span className="budget-after pure-u-1-2">After Bills: ${afterBills} left</span>
-            </p>
+          <ul className="pure-menu-list pure-g">
+            {allBills}
+          </ul>
+        </main>
+        <section className="budget-overview pure-menu pure-g">
+          <span className="budget-total pure-menu-item pure-u-1-2"><b>Total:</b> ${sumOfBills}</span>
+          <span className="budget-after pure-u-1-2"><b>After Bills:</b> ${afterBills} left</span>
         </section>
       </div>
     );
