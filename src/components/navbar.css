@@ -1,13 +1,7 @@
 .navbar {
   text-align: right;
-  margin-top: 15px;
-  padding: 15px;
 }
 
 .pure-menu-link {
   color: black;
-}
-
-.navlist {
-margin-right: 70px;
 }

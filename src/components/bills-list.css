@@ -1,6 +1,6 @@
 .budget-bills-list {
   width: 100%;
-  height: 100%;
+  height: 1500px;
 
 
   position: absolute;
@@ -21,7 +21,6 @@ h1 {
 
 .budget-projection {
   font-size: 125%;
-  height: 50px;
 }
 
 .monthly-income {
@@ -29,6 +28,7 @@ h1 {
   color: white;
   border-radius: 5px;
   letter-spacing: 1px;
+  height: auto;
   padding: 15px;
 }
 
@@ -37,8 +37,14 @@ h1 {
   color: white;
   letter-spacing: 1px;
   border-radius: 5px;
+  height: auto;
   padding: 15px;
 
+}
+
+.budget-all-bills {
+  width: 100%;
+  /* height: 100%; */
 }
 
 .budget-overview {

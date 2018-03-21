@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {fetchBills} from '../actions/bills';
 import sumOfKeys from '../utils/sumofkeys'
 import Bill from './bill';
+import Navbar from './navbar';
 import './bills-list.css';
 export class billsList extends React.Component {
 
@@ -29,6 +30,7 @@ export class billsList extends React.Component {
     return (
       <div>
         <main className="pure-menu budget-bills-list">
+          <Navbar/>
           <h1>Budget App</h1>
           <p className="budget-projection pure-g">
           <span className="monthly-income pure-u-1-2">Your monthly income is <b>${this.props.income}</b></span>
@@ -37,7 +39,7 @@ export class billsList extends React.Component {
           {/* <h2>
             Here are all of your bills ({this.props.bills.length} total):
           </h2> */}
-          <ul className="pure-menu-list pure-g">
+          <ul className=" budget-all-bills pure-menu-list pure-g">
             {allBills}
           </ul>
         </main>

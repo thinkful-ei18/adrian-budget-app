@@ -50,7 +50,6 @@ class App extends Component {
         <Route path="/bills">
         <div className="pure-g">
             <div className="pure-u-1-1">
-              <Navbar/>
               <BillsList/>
             </div>
         </div>
