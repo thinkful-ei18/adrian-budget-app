@@ -2,16 +2,30 @@ import React from 'react';
 import { reduxForm, Field} from 'redux-form';
 import { required, nonEmpty, numbersOnly } from  '../validators';
 import { addIncome } from '../actions/income';
-import { Link } from 'react-router-dom';
 import './income.css';
+import {Redirect} from 'react-router-dom';
 
 export class AddIncome extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state =  {
+      Redirect: false
+    }
+  }
+
 onSubmit(value) {
   this.props.dispatch(addIncome(value.monthlyIncome));
+  this.setState({Redirect: true})
+  // this.props.history.push('/onboarding-firstbill');
 }
 
 render () {
+
+if (this.state.Redirect) {
+  return <Redirect to="/onboarding-firstbill"/>;
+}
 
 return (
     <main className="budget-income">
@@ -27,9 +41,7 @@ return (
               validate={[required, nonEmpty, numbersOnly]}
             />
             dollars a month.</p>
-            <Link to="/onboarding-firstbill">
               <button className="pure-button pure-button-primary" type="submit">Submit</button>
-            </Link>
         </form>
     </main>
     );
