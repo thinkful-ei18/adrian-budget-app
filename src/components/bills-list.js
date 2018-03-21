@@ -4,7 +4,6 @@ import {fetchBills} from '../actions/bills';
 import sumOfKeys from '../utils/sumofkeys'
 import Bill from './bill';
 import './bills-list.css';
-import AddBill from './add-bill';
 export class billsList extends React.Component {
 
   componentDidMount() {
@@ -30,7 +29,7 @@ export class billsList extends React.Component {
     return (
       <div>
         <main className="pure-menu budget-bills-list">
-          <h1>Bills List</h1>
+          <h1>Budget App</h1>
           <p>Your monthly income is: ${this.props.income}
             <br/>Every two weeks, you make: ${biWeekly}
           </p>
