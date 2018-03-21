@@ -19,7 +19,7 @@ export class newBill extends React.Component {
       <div className="budget-add-bill">
       <h1>Add A Bill</h1>
         <p>Add a name and dollar amount for your monthly bills</p>
-        <form className="pure-form pure-form-stacked" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
+        <form className="pure-form pure-form-aligned" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
         <Field
           name="name"
           label="Bill Name"

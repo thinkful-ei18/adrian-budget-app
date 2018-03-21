@@ -4,6 +4,7 @@ import {fetchBills} from '../actions/bills';
 import sumOfKeys from '../utils/sumofkeys'
 import Bill from './bill';
 import './bills-list.css';
+import AddBill from './add-bill';
 export class billsList extends React.Component {
 
   componentDidMount() {
