@@ -33,3 +33,10 @@ export const loginUserError = error => ({
   type: LOGIN_USER_ERROR,
   error
 });
+
+export const ADD_USER_INCOME = 'ADD_USER_INCOME';
+export const addUserIncome = amount => ({
+  type: ADD_USER_INCOME,
+  amount
+});
+
