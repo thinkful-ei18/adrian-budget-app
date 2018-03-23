@@ -51,12 +51,12 @@ export const addIncomeError = error => ({
   error
 });
 
-export const addIncome = income => dispatch => {
-  // const id = 2;
+export const addIncome = income => (dispatch, getState) => {
+  const id = getState().auth.userId;
 
   dispatch(addIncomeRequest());
 
-      return fetch(`${API_BASE_URL}/users/1/income`, {
+      return fetch(`${API_BASE_URL}/users/${id}/income`, {
         method: 'PUT',
         body: JSON.stringify(income),
         headers: {
