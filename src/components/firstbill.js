@@ -2,18 +2,36 @@ import React from 'react';
 import { reduxForm, Field} from 'redux-form';
 import { required, nonEmpty, numbersOnly } from  '../validators';
 import { postBill } from '../actions/bills';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './firstbill.css';
 
 
 export class newBill extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state =  {
+      Redirect: false
+    }
+  }
+
   onSubmit(values) {
+    values.id = this.props.userid;
     values.amount = parseInt(values.amount, 10);
-    this.props.dispatch(postBill(values));
+    this.props.dispatch(postBill(values))
+    .then(() => {
+      this.setState({Redirect: true})
+
+    })
   }
 
   render () {
+
+    if (this.state.Redirect) {
+      return <Redirect to="/bills"/>;
+    }
 
     return (
       <main className="budget-firstbill">
@@ -39,15 +57,24 @@ export class newBill extends React.Component {
           />
           per month.
           </p>
-          <Link to="/bills">
             <button className="pure-button pure-button-primary" type="submit">Submit</button>
-          </Link>
         </form>
       </main>
     );
   }
 }
 
+const mapStateToProps = (state) => ({
+  userid: state.auth.userid
+});
+
+newBill = connect(
+  mapStateToProps,
+)(newBill);
+
+
+
 export default reduxForm({
   form: 'bills'
 })(newBill);
+

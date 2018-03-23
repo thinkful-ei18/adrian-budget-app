@@ -74,14 +74,17 @@ export const postBillError = error => ({
     error
 });
 
-export const postBill = bill => dispatch => {
+export const postBill = bill => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+
 dispatch(postBillRequest());
 
     return fetch(`${API_BASE_URL}/bills`, {
       method: 'POST',
       body: JSON.stringify(bill),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${authToken}`
       }
     })
     .then(res => {
