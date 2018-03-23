@@ -1,8 +1,8 @@
 import { REGISTER_USER_REQUEST, REGISTER_USER_SUCCESS, REGISTER_USER_ERROR, LOGIN_USER_REQUEST, LOGIN_USER_SUCCESS, LOGIN_USER_ERROR, ADD_INCOME_REQUEST, ADD_INCOME_SUCCESS, ADD_INCOME_ERROR } from '../actions/users';
 
 const initialState = {
-  userId: 0,
-  income: 0
+  userId: null,
+  income: null
 };
 
 export function usersReducer(state=initialState, action) {
@@ -78,5 +78,5 @@ export function usersReducer(state=initialState, action) {
         loading: false
       });
   }
-
+  return state;
 }
