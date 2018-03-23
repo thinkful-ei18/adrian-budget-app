@@ -3,14 +3,29 @@ import Input from './input';
 import {reduxForm, Field} from 'redux-form';
 import {required, nonEmpty} from '../validators';
 import { login } from '../actions/auth';
+import {Redirect} from 'react-router-dom';
+
 
 export class logInForm extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state =  {
+      Redirect: false
+    }
+  }
+
   onSubmit(value) {
     this.props.dispatch(login(value.username, value.password));
+    this.setState({Redirect: true});
   }
 
 render () {
+
+  if (this.state.Redirect) {
+    return <Redirect to="/bills"/>;
+  }
 
   return (
     <div>

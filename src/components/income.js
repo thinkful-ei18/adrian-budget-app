@@ -18,7 +18,7 @@ export class AddIncome extends React.Component {
 onSubmit(value) {
   console.log(value.income);
   this.props.dispatch(addIncome(value));
-  // this.setState({Redirect: true})
+  this.setState({Redirect: true})
   // this.props.history.push('/onboarding-firstbill');
 }
 
