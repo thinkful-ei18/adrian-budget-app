@@ -1,6 +1,5 @@
 import {API_BASE_URL} from '../config';
 
-
 export const REGISTER_USER_REQUEST = 'REGISTER_USER_REQUEST';
 export const registerUserRequest = () => ({
   type: REGISTER_USER_REQUEST
@@ -17,7 +16,6 @@ export const registerUserError = error => ({
   type: REGISTER_USER_ERROR,
   error
 });
-
 
 export const LOGIN_USER_REQUEST = 'LOGIN_USER_REQUEST';
 export const loginUserRequest = () => ({
