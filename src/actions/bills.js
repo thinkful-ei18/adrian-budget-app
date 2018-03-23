@@ -28,9 +28,15 @@ export function getBills(bills) {
 }
 
 export const fetchBills = bills => dispatch => {
+    dispatch(fetchBillsRequest());
 
-  dispatch(fetchBillsRequest());
-  getBills(bills)
+    return fetch(`${API_BASE_URL}/bills`)
+    .then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json(res);
+    })
     .then(bills => {
     dispatch(fetchBillsSuccess(bills));
     })
