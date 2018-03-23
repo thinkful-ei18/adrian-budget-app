@@ -1,7 +1,7 @@
 import React from 'react';
 import { reduxForm, Field} from 'redux-form';
 import { required, nonEmpty, numbersOnly } from  '../validators';
-import { addIncome } from '../actions/income';
+import { addIncome } from '../actions/users';
 import './income.css';
 import {Redirect} from 'react-router-dom';
 
@@ -16,8 +16,9 @@ export class AddIncome extends React.Component {
   }
 
 onSubmit(value) {
-  this.props.dispatch(addIncome(value.monthlyIncome));
-  this.setState({Redirect: true})
+  console.log(value.income);
+  this.props.dispatch(addIncome(value));
+  // this.setState({Redirect: true})
   // this.props.history.push('/onboarding-firstbill');
 }
 
@@ -34,7 +35,7 @@ return (
           <p>I make
             <Field
               className="pure-input-1-8"
-              name="monthlyIncome"
+              name="income"
               label="Monthly Income"
               type="number"
               component="input"
