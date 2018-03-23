@@ -34,9 +34,19 @@ export const loginUserError = error => ({
   error
 });
 
-export const ADD_USER_INCOME = 'ADD_USER_INCOME';
-export const addUserIncome = amount => ({
-  type: ADD_USER_INCOME,
+export const ADD_INCOME_REQUEST = 'ADD_INCOME_REQUEST';
+export const addIncomeRequest = () => ({
+  type: ADD_INCOME_REQUEST
+});
+
+export const ADD_INCOME_SUCCESS =  'ADD_INCOME_SUCCESS';
+export const addIncomeSuccess = amount => ({
+  type: ADD_INCOME_SUCCESS,
   amount
 });
 
+export const ADD_INCOME_ERROR =  'ADD_INCOME_ERROR';
+export const addIncomeError = error => ({
+  type: ADD_INCOME_ERROR,
+  error
+});
