@@ -10,7 +10,6 @@ const initialState = {
   {name: 'Happiness',
   amount: 0,
   }],
-  income: 0,
   loading: false,
   error: null
 }
@@ -38,13 +37,6 @@ export function billsReducer(state=initialState, action) {
       {
         error: action.error,
         loading: false
-      });
-  }
-  else if (action.type === ADD_INCOME) {
-
-    return Object.assign({}, state,
-      {
-      income: action.amount,
       });
   }
   else if (action.type === POST_BILL_REQUEST) {
