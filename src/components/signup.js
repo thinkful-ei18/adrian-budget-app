@@ -2,15 +2,40 @@ import React from 'react';
 import Input from './input';
 import {reduxForm, Field} from 'redux-form';
 import {required, nonEmpty} from '../validators';
-import { Link } from 'react-router-dom';
+import { registerUser } from '../actions/users';
+import { login } from '../actions/auth';
+import { Redirect } from 'react-router-dom';
 
 export class signUpForm extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state =  {
+      Redirect: false
+    }
+  }
+
   onSubmit(value) {
-  console.log(value);
+  this.props.dispatch(registerUser(value))
+  .then(() => {
+    this.props.dispatch(login(value.username, value.password));
+  })
+  .then(() => {
+    this.setState({Redirect: true});
+  })
+  .catch(err => {
+    console.log('do something with this:', err);
+  });
   }
 
   render () {
+
+    if (this.state.Redirect) {
+      return <Redirect to="/onboarding-income"/>;
+    }
+
+
     return (
       <div>
         <h1>Sign Up</h1>
