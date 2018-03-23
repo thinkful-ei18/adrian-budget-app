@@ -2,33 +2,41 @@ import React from 'react';
 import Input from './input';
 import {reduxForm, Field} from 'redux-form';
 import {required, nonEmpty} from '../validators';
-import { Link } from 'react-router-dom';
+import { login } from '../actions/auth';
 
-export function logInForm (props) {
-return (
-  <div>
-    <h1>Log In</h1>
-    <form className="pure-form pure-form-stacked">
-      <Field
-      name="username"
-      label="Username"
-      component={Input}
-      type="text"
-      validate={[required, nonEmpty]}
-      />
-      <Field
-      name="password"
-      label="Password"
-      component={Input}
-      type="text"
-      validate={[required, nonEmpty]}
-      />
-      <Link to="/bills">
+export class logInForm extends React.Component {
+
+  onSubmit(value) {
+    this.props.dispatch(login(value.username, value.password));
+  }
+
+render () {
+
+  return (
+    <div>
+      <h1>Log In</h1>
+      <form className="pure-form pure-form-stacked" onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
+        <Field
+        name="username"
+        label="Username"
+        component={Input}
+        type="text"
+        validate={[required, nonEmpty]}
+        />
+        <Field
+        name="password"
+        label="Password"
+        component={Input}
+        type="text"
+        validate={[required, nonEmpty]}
+        />
         <button type="submit" className="pure-button pure-button-primary">Sign In</button>
-      </Link>
-    </form>
-  </div>
-);
+      </form>
+    </div>
+  );
+
+}
+
 }
 
 export default reduxForm ({
