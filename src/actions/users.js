@@ -50,3 +50,41 @@ export const addIncomeError = error => ({
   type: ADD_INCOME_ERROR,
   error
 });
+
+export const addIncome = income => dispatch => {
+  // const id = 2;
+
+  dispatch(addIncomeRequest());
+
+      return fetch(`${API_BASE_URL}/users/1/income`, {
+        method: 'PUT',
+        body: JSON.stringify(income),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => {
+          if (!res.ok) {
+            if (
+              res.headers.has('content-type') &&
+              res.headers
+                .get('content-type')
+                .startsWith('application/json')
+            ) {
+              return res.json().then(err => Promise.reject(err));
+            }
+            return Promise.reject({
+              code: res.status,
+              message: res.statusText
+          });
+      }
+          return res.json(res);
+        })
+        .then(income => {
+            dispatch(addIncomeSuccess(income))
+        })
+        .catch(error => {
+            dispatch(addIncomeError(error));
+        })
+        .then(() => console.log('Updated income:', income))
+    }
