@@ -61,18 +61,19 @@ export const login = (username, password) => dispatch => {
                 username,
                 password
             })
-        })
-            .then(res => res.json())
-            .then(response => {
-                if (response.message) {
-                    dispatch(authError(response));
+    })
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Something went wrong!');
                 }
-                localStorage.setItem('authToken', response.authToken);
-                localStorage.setItem('userId', response.userId);
-                dispatch(loginUserSuccess(response.userId, response.authToken));
+            return res;
+            })
+            .then(res => res.json())
+            .then(data => {
+                dispatch(loginUserSuccess(data.userId, data.authToken));
               })
             .catch(err => {
-
+                dispatch(authError(err));
             })
     );
 };

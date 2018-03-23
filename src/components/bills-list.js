@@ -55,8 +55,7 @@ export class billsList extends React.Component {
 const mapStateToProps = state => ({
   bills: state.bills.list,
   income: state.bills.income,
-  token: state.auth.authToken,
-  userId: state.auth.userId
+  currentUser: state.auth.currentUser
 });
 
 export default connect(mapStateToProps)(billsList);

@@ -30,10 +30,11 @@ export function getBills(bills) {
 export const fetchBills = bills => (dispatch, getState) => {
 
     const token = getState().auth.authToken;
-    // console.log(token);
-    console.log('state:', getState())
+    // console.log('token:', token);
+    console.log('state:', getState());
 
-    dispatch(fetchBillsRequest());
+    if (token) {
+        dispatch(fetchBillsRequest());
 
     return fetch(`${API_BASE_URL}/bills`, {
         method: 'GET',
@@ -53,7 +54,7 @@ export const fetchBills = bills => (dispatch, getState) => {
     .catch(error => {
     dispatch(fetchBillsError(error));
   });
-
+    }
 };
 
 export const POST_BILL_REQUEST = 'POST_BILL_REQUEST';

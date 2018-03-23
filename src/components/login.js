@@ -17,8 +17,13 @@ export class logInForm extends React.Component {
   }
 
   onSubmit(value) {
-    this.props.dispatch(login(value.username, value.password));
-    this.setState({Redirect: true});
+    this.props.dispatch(login(value.username, value.password))
+    .then(() => {
+      this.setState({Redirect: true});
+    })
+    .catch(err => {
+      console.log('do something with this:', err);
+    });
   }
 
 render () {
