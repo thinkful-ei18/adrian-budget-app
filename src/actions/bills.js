@@ -27,10 +27,20 @@ export function getBills(bills) {
   }).then(data => data.map(bill => bill));
 }
 
-export const fetchBills = bills => dispatch => {
+export const fetchBills = bills => (dispatch, getState) => {
+
+    const token = getState().auth.authToken;
+    // console.log(token);
+    console.log('state:', getState())
+
     dispatch(fetchBillsRequest());
 
-    return fetch(`${API_BASE_URL}/bills`)
+    return fetch(`${API_BASE_URL}/bills`, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
     .then(res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);

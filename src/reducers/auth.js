@@ -43,7 +43,8 @@ export default function reducer(state = initialState, action) {
     } else if (action.type === LOGIN_USER_SUCCESS) {
         return Object.assign({}, state, {
             authToken: action.token,
-            userId: action.userId
+            userId: action.userId,
+            currentUser: true,
         });
     }
     return state;
