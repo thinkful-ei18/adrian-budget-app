@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import About from './components/about';
-import Navbar from './components/navbar';
+// import Navbar from './components/navbar';
 import Income from './components/income';
 // import AddIncome from './components/add-income';
 // import AddBills from './components/add-bill';
