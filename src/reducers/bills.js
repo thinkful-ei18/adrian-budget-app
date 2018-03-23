@@ -1,7 +1,5 @@
 import {FETCH_BILLS_REQUEST, FETCH_BILLS_SUCCESS, FETCH_BILLS_ERROR, POST_BILL_REQUEST, POST_BILL_SUCCESS, POST_BILL_ERROR} from '../actions/bills'
 
-import {ADD_INCOME} from '../actions/income'
-
 const initialState = {
   list:
   [{name: 'Good Vibes',
