@@ -16,9 +16,11 @@ export class AddIncome extends React.Component {
   }
 
 onSubmit(value) {
-  console.log(value.income);
-  this.props.dispatch(addIncome(value));
+  console.log(value);
+  this.props.dispatch(addIncome(value.income))
+  .then( () => {
   this.setState({Redirect: true})
+  });
 }
 
 render () {

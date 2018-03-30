@@ -2,7 +2,7 @@ import React from 'react';
 import { reduxForm, Field} from 'redux-form';
 import { required, nonEmpty, numbersOnly } from  '../validators';
 import { postBill } from '../actions/bills';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './firstbill.css';
 

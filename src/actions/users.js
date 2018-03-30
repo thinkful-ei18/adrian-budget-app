@@ -58,7 +58,7 @@ export const addIncome = income => (dispatch, getState) => {
 
       return fetch(`${API_BASE_URL}/users/${id}/income`, {
         method: 'PUT',
-        body: JSON.stringify(income),
+        body: JSON.stringify({income}),
         headers: {
           'Content-Type': 'application/json'
         }
@@ -80,8 +80,8 @@ export const addIncome = income => (dispatch, getState) => {
       }
           return res.json(res);
         })
-        .then(income => {
-            dispatch(addIncomeSuccess(income))
+        .then(user => {
+            dispatch(addIncomeSuccess(user.income))
         })
         .catch(error => {
             dispatch(addIncomeError(error));
