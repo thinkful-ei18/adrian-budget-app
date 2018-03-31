@@ -54,7 +54,7 @@ export class billsList extends React.Component {
 
 const mapStateToProps = state => ({
   bills: state.bills.list,
-  income: state.bills.income,
+  income: state.users.income,
   currentUser: state.auth.currentUser
 });
 
